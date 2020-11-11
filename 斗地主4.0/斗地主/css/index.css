@@ -1,0 +1,535 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+em{
+    font-style: normal;
+}
+
+html,body{
+    min-width: 1200px;
+    overflow: hidden;
+    background: url(../images/bg.jpeg) no-repeat;
+    background-size: cover;
+    -webkit-user-select:none; 
+    -moz-user-select:none; 
+    -ms-user-select:none; 
+    user-select:none;                               /* 去点文字一直点击出现蓝色的背景 */
+}
+.bg{
+    display: block;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    min-width: 1200px;
+    position: absolute;
+    /* background: url(./); */
+}
+ .left{                                 /* 左 */
+    width:20%;
+    height: 100%;
+    float: left;
+}
+.mid{                                   /* 中 */
+    width:60%;
+    height: 100%;
+    float: left;
+}
+.right{                                 /* 右 */
+    width:20%;
+    height: 100%;
+    float: right;
+}
+.mid_top{                               /* 展示区域 */
+    width: 100%;
+    height: 65%;
+    float: left;
+}
+.mid_end{                               /* 玩家区域 */
+    width: 100%;
+    height: 35%;
+    float: left;
+    /* background-color: antiquewhite; */
+}
+
+.all_poker{
+    width: 125px;
+    height: 175px;
+    margin: 100px auto 0px;
+    position: relative;
+}
+.all_poker li{
+    position: absolute;
+    border-radius: 3px;
+}
+.temp_poker{
+    width: 125px;
+    height: 175px;
+    margin: 100px auto 0px;
+    position: relative;
+}
+.back {
+    width:125px;
+    height: 175px;
+    border-radius: 3px;
+    background: url(../images/14.png) -88px -224px;
+    position: absolute;
+    z-index: 100;
+}
+.play_1{
+    width: 175px;
+    height: 600px; 
+    position: relative;
+    left: 7%;
+    top: 3%;
+}
+.play_2{
+    width: 600px;
+    height: 175px;
+    position: relative;
+}
+
+.play_3{
+    width: 175px;
+    height: 600px;
+    /* padding: 40px; */
+    position: relative;
+    top: 3%;
+    left: 55%;
+    
+}
+.play_1 li,.play_2 li,.play_3 li{
+    position: absolute;
+    border-radius: 3px;
+}
+.get-boss {
+    display: none;
+}
+.mid .get-boss .get,
+.mid .get-boss .cancel,
+.mid .play-btn .play,
+.mid .play-btn .cancel{
+    width: 60px;
+    height: 30px;
+    display: block;
+    float: left;
+    margin: 0 10px 0 20px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background: brown;
+}
+.left .get-boss .get,
+.left .get-boss .cancel,
+.right .get-boss .get,
+.right .get-boss .cancel,
+.left .play-btn .play,
+.left .play-btn .cancel,
+.right .play-btn .play,
+.right .play-btn .cancel{
+    width: 60px;
+    height: 30px;
+    display: block;
+    margin: 0 0 20px 0;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background: brown;
+    
+}
+.play_1 .on{
+    left:-20px;
+}
+.play_2 .on {
+    top:-20px;
+}
+.play_3 .on{
+    left: -20px;
+}
+.play-btn {
+    display: none;
+    /* float: left; */
+}
+.popup{
+    width: 400px;
+    height: 250px;
+    display: none;
+    background: rgb(29,42,71,.9);
+    border-radius: 15px;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    margin-left: -200px;
+    text-align: center;
+    z-index: 200;
+}
+.popup .txt{
+    width: 350px;
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+    line-height: 150px;
+    font-size: 22px;
+    text-align: center;
+    color: rgb(236, 222, 241);
+}
+.popup a.confirm{
+    width: 70px;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+    background: rgb(99,17,24);
+    color: rgb(156,134,84);
+    border-radius: 8px;
+    line-height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+
+.left-computer{
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.right-computer{
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.computer-console{
+    width: 100%;
+    height: 20%;
+}
+.computer-info{
+    width: 40%;
+    height: 100%;
+}
+.left .computer-info{
+    float: left;
+}
+.right .computer-info{
+    float: right;
+}
+.computer-status{
+    width: 60%;
+    height: 100%;
+}
+.left .computer-status{
+    float: right;
+    position: absolute;
+    top: 0%;
+    left: 55%;
+}
+.right .computer-status{
+    float: right;
+    position: absolute;
+    top: 0%;
+    left: 15%;
+}
+.left .cards{
+    width: 100%;
+    height: 80%;
+    position: relative;
+}
+.right .cards{
+    width: 100%;
+    height: 80%;
+    position: relative;
+}
+.player-status{
+    /* background-color: blueviolet; */
+    width: 100%;
+    height: 20%;
+}
+.player-console{
+    width: 100%;
+    height: 80%;
+}
+.player-info{
+    position: relative;
+    float: left;
+    width: 20%;
+    height: 100%;
+}
+
+/* 玩家1的头像 */
+.headrole1,.headrole2,.headrole3{
+    /* width: 100%;
+    height: 100%; */
+    border-radius: 200px;
+    box-sizing: border-box;
+    background-color: honeydew;
+    background-size: cover;
+    background-position: 5px 0px;
+}
+/* 玩家0的头像 */
+.headrole1{
+    /* height: 200px; */
+    width: 100%;
+    height: 80%;
+    background-image: url(../images/head_portrait02.png);
+}
+.headrole2{
+    /* height: 200px; */
+    /* height: 100%; */
+    width: 90%;
+    height: 70%;
+    background-image: url(../images/head_portrait01.png);
+}
+.headrole3{
+    /* height: 200px; */
+    width: 100%;
+    height: 80%;
+    background-image: url(../images/head_portrait03.png);
+}
+
+.player1,.player2,.player3{
+    /* width: 80%; */
+    position: relative;
+    bottom: 20px;
+    /* left: 0px; */
+    /* right: 0px; */
+    height: 25px;
+    line-height: 25px;
+    color: white;
+    font-size: 18px;
+    background-color:  rgba(0, 0, 0, 0.5);
+}
+.player1{
+
+}
+.player2{
+    width: 80%;
+    left: 5px;
+}
+.player3{
+    width: 100%;
+    right: 20px;
+}
+
+.player span{
+    margin: 0 5px;
+    position: relative;
+}
+.player-roles{
+    height: 25px;
+    padding-left: 77px;
+}
+#dizhu{
+    background: url(../images/dizhu.png) no-repeat;
+}
+#nongmin{
+    background: url(../images/nongmin.png) no-repeat;
+}
+.player-name{ 
+    
+}
+.mid .cards{
+    float: left;
+    /* background-color: beige; */
+    width: 80%;
+    height: 100%;
+}
+
+.jindou{
+    display: block;
+    background: url(../images/jindou.png) no-repeat;
+    padding-left: 25px;
+    height: 25px;
+    position: relative;
+    left: 0;
+    bottom: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+/* .player-1{
+    height: 35px;
+    position: absolute;
+    bottom: 0px;
+    right: 15px;
+    font-size: 18px;
+    line-height: 35px;
+    color: white;
+    background-color:  rgba(0, 0, 0, 0.5);
+    
+} */
+/* .player-1 span{
+    margin: 0 5px;
+    position: relative;
+}
+.player-roles{
+    height: 25px;
+    padding-left: 77px;
+}
+#dizhu{
+    background: url(../images/dizhu.png) no-repeat;
+}
+#nongmin{
+    background: url(../images/nongmin.png) no-repeat;
+}
+.player-name{ 
+    
+}
+.game{
+    float: left;
+    width: 80%;
+    height: 100%;
+} */
+/* .hand-cards{
+    background-color: brown;
+    width: 100%;
+    height: 80%;
+} */
+/* .play_2{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+} */
+/* .gold{
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    bottom: -10px;
+    right: 50px;
+    padding-left: 30px;
+    background: url(../images/jindou.png) no-repeat;
+    
+}
+.jindou{
+    /* position: absolute;
+    bottom: 10px;
+    left: -25px; 
+    color: white;
+} */
+.all_poker{
+    width: 125px;
+    height: 175px;
+    margin: 100px auto 0px;
+    position: relative;
+    /* background: url(../images/0.png) -88px -224px; */
+    /* background: #fff; */
+}
+.all_poker li{
+    position: absolute;
+}
+.temp_poker{
+    width: 125px;
+    height: 175px;
+    margin: 100px auto 0px;
+    position: relative;
+}
+
+/* 背景牌 */
+.back {
+    width:125px;
+    height: 175px;
+    border-radius: 3px;
+    background: url(../images/14.png) -88px -224px;
+    position: absolute;
+    z-index: 100;
+}
+
+/* 倒计时 */
+.time-item{
+    display: none;
+    /* float: right; */
+}
+.time-item strong{
+    background: #2f5f80;
+    color: #fff;
+    line-height: 50px;
+    font-size: 40px;
+    font-family: Arial;
+    padding: 0 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* 结算 */
+.end{
+    width: 600px;
+    height: 350px;
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    margin-left: -300px;
+    text-align: center;
+    background: rgba(255, 252, 234);
+    border-radius: 15px;
+    z-index: 200;
+}
+.end .result{
+    width: 100%;
+    height: 30%;
+    display: block;
+    color: gold;
+    font-size: 30px;
+    line-height: 100px;
+    font-weight: bold;
+    letter-spacing: 20px;
+}
+.end .info{
+    width: 100%;
+    height: 40%;
+}
+.end .info span{
+    width: 100%;
+    height: 33.33%;
+    display: block;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 5px;
+}
+.end .multinfo{
+    width: 100%;
+    height: 30%;
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    padding-top: 20px;
+}
+.end .goback{
+    width: 15%;
+    height: 15%;
+    position: absolute;
+    left: 50px;
+    bottom: 15px;
+    border-radius: 20px;
+    background: rgb(158,110,52);
+    color:rgb(126, 12, 20);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 50px;
+
+}
+.end .again{
+    width: 15%;
+    height: 15%;
+    position: absolute;
+    right: 50px;
+    bottom: 15px;
+    border-radius: 20px;
+    background: rgb(158,110,52);
+    color:rgb(126, 12, 20);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 50px;
+}
